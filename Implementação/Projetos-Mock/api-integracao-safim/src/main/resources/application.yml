@@ -1,0 +1,4 @@
+logging:  pattern:    console: "%d %-5level %logger : %msg%n"  level:    org.springframewok: info
+
+server:
+  port: 8090
