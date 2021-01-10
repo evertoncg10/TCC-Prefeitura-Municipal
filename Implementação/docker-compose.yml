@@ -1,11 +1,11 @@
 version: '2.2'
 
 services:
-  app:
+  app-cidadao:
     image: api-informacoes-cidadao-image:latest
     build:
-      context: .
-    container_name: app
+      context: ./Projetos/api-informacoes-cidadao
+    container_name: app-cidadao
     depends_on: 
       - db
     environment: 
@@ -26,3 +26,10 @@ services:
     ports:
       - "5432:5432"
   
+  app-integracao-safim:
+    image: api-integracao-safim:latest
+    build:
+      context: ./Projetos-Mock/api-integracao-safim
+    container_name: app-integracao-safim
+    ports:
+      - "8090:8090"
