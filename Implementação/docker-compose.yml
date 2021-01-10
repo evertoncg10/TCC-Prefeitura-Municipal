@@ -6,13 +6,6 @@ services:
     build:
       context: ./Projetos/api-informacoes-cidadao
     container_name: app-cidadao
-    depends_on: 
-      - db
-    environment: 
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/bd-cidadao
-      - SPRING_DATASOURCE_USERNAME=postgres
-      - SPRING_DATASOURCE_PASSWORD=postgres
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
     ports:
       - "8080:8080"
   
@@ -22,7 +15,7 @@ services:
     environment: 
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=bd-cidadao
+      - POSTGRES_DB=bd-view-safim
     ports:
       - "5432:5432"
   
@@ -31,5 +24,12 @@ services:
     build:
       context: ./Projetos-Mock/api-integracao-safim
     container_name: app-integracao-safim
+    depends_on: 
+      - db
+    environment: 
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/bd-view-safim
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
     ports:
       - "8090:8090"

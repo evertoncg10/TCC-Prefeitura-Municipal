@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-import com.poctcc.mock.api.Enum.Estado;
+import com.poctcc.mock.api.enums.Estado;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;

@@ -4,13 +4,15 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Enumerated;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-import com.poctcc.mock.api.Enum.Sexo;
+import com.poctcc.mock.api.enums.Sexo;
+import com.poctcc.mock.api.enums.TipoPessoaFisica;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -39,5 +41,12 @@ public class PessoaFisica extends Pessoa {
 
 	@NotNull
 	private Sexo sexo;
+	
+	private Long matricula;
 
+	@Size(max = 120)
+	private String cargo;
+	
+	@Enumerated
+	private TipoPessoaFisica tipo;
 }

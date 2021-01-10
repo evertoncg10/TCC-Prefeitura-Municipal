@@ -1,4 +1,4 @@
-package com.poctcc.mock.api.Enum;
+package com.poctcc.mock.api.enums;
 
 public enum Sexo {
 
