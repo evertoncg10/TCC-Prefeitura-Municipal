@@ -9,15 +9,25 @@ services:
     ports:
       - "8080:8080"
   
-  db:
+  db-safim:
     image: postgres:9.5
-    container_name: db
+    container_name: db-safim
     environment: 
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=bd-view-safim
     ports:
       - "5432:5432"
+      
+  db-stur:
+    image: postgres:9.5
+    container_name: db-stur
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=bd-view-stur
+    ports:
+      - "5433:5432"
   
   app-integracao-safim:
     image: api-integracao-safim:latest
@@ -25,11 +35,26 @@ services:
       context: ./Projetos-Mock/api-integracao-safim
     container_name: app-integracao-safim
     depends_on: 
-      - db
+      - db-safim
     environment: 
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/bd-view-safim
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db-safim:5432/bd-view-safim
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=postgres
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
     ports:
       - "8090:8090"
+      
+  app-stur:
+    image: api-integracao-stur:latest
+    build:
+      context: ./Projetos-Mock/api-integracao-stur
+    container_name: api-integracao-stur
+    depends_on:
+      - db-stur
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db-stur:5432/bd-view-stur
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+    ports:
+      - "8070:8070"

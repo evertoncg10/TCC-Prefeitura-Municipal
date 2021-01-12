@@ -1,4 +1,4 @@
-package com.poctcc.api.config;
+package com.poctcc.mock.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,7 +23,7 @@ public class SwaggerConfig {
 	private ApiInfo apiInfo() {
 		// TODO Auto-generated method stub
 		return new ApiInfoBuilder()
-				.title("API de Consulta do Cidadão")
+				.title("API de Integração STUR")
 				.description("POC para apresentação de Trabalho de Conclusão do Curso (TCC) para a PUC Minas Virtual, curso Arquitetura de Software Distribuído")
 				.version("1.0")
 				.contact(new Contact("Everton Cezar Gonçalves e Jeferson Job Ribeiro dos Santos", "", ""))
