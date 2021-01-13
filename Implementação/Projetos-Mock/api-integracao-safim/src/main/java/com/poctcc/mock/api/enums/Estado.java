@@ -2,19 +2,42 @@ package com.poctcc.mock.api.enums;
 
 public enum Estado {
 
-	Acre("AC"), Alagoas("AL"), Amapá("AP"), Amazonas("AM"), Bahia("BA"), Ceará("CE"), DistritoFederal("DF"),
-	EspíritoSanto("ES"), Goiás("GO"), Maranhão("MA"), MatoGrosso("MT"), MatoGrossoDoSul("MS"), MinasGerais("MG"),
-	Pará("PA"), Paraíba("PB"), Paraná("PR"), Pernambuco("PE"), Piauí("PI"), RioDeJaneiro("RJ"), RioGrandeDoNorte("RN"),
-	RioGrandeDoSul("RS"), Rondônia("RO"), Roraima("RR"), SantaCatarina("SC"), SãoPaulo("SP"), Sergipe("SE"),
-	Tocantins("TO"),;
+	ACRE("AC", "Acre"), ALAGOAS("AL", "Alagoas"), AMAPA("AP", "Amapá"), AMAZONAS("AM", "Amazonas"),
+	BAHIA("BA", "Bahia"), CEARA("CE", "Ceará"), DISTRITO_FEDERAL("DF", "Distrito Federal"),
+	ESPIRITO_SANTO("ES", "Espírito Santo"), GOIAS("GO", "Goiás"), MARANHAO("MA", "Maranhão"),
+	MATO_GROSSO("MT", "Mato Grosso"), MATO_GROSSO_DO_SUL("MS", "Mato Grosso do Sul"),
+	MINAS_GERAIS("MG", "Minas Gerais"), PARA("PA", "Pará"), PARAIBA("PB", "Paraíba"), PARANA("PR", "Paraná"),
+	PERNAMBUCO("PE", "Pernambuco"), PIAUI("PI", "Piauí"), RIO_DE_JANEIRO("RJ", "Rio de Janeiro"),
+	RIO_GRANDE_DO_NORTE("RN", "Rio Grande do Norte"), RIO_GRANDE_DO_SUL("RS", "Rio Grande do Sul"),
+	RONDONIA("RO", "Rondônia"), RORAIMA("RR", "Roraima"), SANTA_CATARINA("SC", "Santa Catarina"),
+	SAO_PAULO("SP", "São Paulo"), SERGIPE("SE", "Sergipe"), TOCANTINS("TO", "Tocantins");
 
-	private final String valor;
+	private final String sigla;
+	private final String descricao;
 
-	Estado(String valorEstado) {
-		valor = valorEstado;
+	Estado(String sigla, String descricao) {
+		this.sigla = sigla;
+		this.descricao = descricao;
 	}
 
-	public String getValor() {
-		return valor;
+	public String getSigla() {
+		return sigla;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public boolean sameOf(String sigla) {
+		return this.sigla.equalsIgnoreCase(sigla);
+	}
+
+	public static Estado of(String sigla) {
+		for (Estado estado : values()) {
+			if (estado.sameOf(sigla)) {
+				return estado;
+			}
+		}
+		return null;
 	}
 }
