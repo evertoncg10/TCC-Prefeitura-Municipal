@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
@@ -40,13 +41,16 @@ public class PessoaFisica extends Pessoa {
 	private LocalDate dataNascimento;
 
 	@NotNull
+	@Enumerated(EnumType.STRING)
+	@Column(length = 1)
 	private Sexo sexo;
-	
+
 	private Long matricula;
 
 	@Size(max = 120)
 	private String cargo;
-	
-	@Enumerated
+
+	@Enumerated(EnumType.STRING)
+	@Column(length = 40)
 	private TipoPessoaFisica tipo;
 }

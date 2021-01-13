@@ -2,6 +2,8 @@ package com.poctcc.mock.api.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -47,6 +49,8 @@ public class Endereco {
 	private String cidade;
 
 	@NotNull
+	@Enumerated(EnumType.STRING)
+	@Column(length = 2)
 	private Estado estado;
 
 //	@OneToMany(mappedBy = "endereco")
