@@ -1,16 +1,15 @@
 package com.poctcc.mock.api.enums;
 
 public enum TipoPessoaFisica {
-	SERVIDOR_PUBLICO('S'),
-	CIDADAO('C');
-	
-	private final char valor;
+	SERVIDOR_PUBLICO("Servidor Público"), CIDADAO("Cidadão");
 
-	TipoPessoaFisica(char valor) {
-		this.valor = valor;
+	private final String descricao;
+
+	TipoPessoaFisica(String descricao) {
+		this.descricao = descricao;
 	}
 
-	public char getValor() {
-		return valor;
+	public String getDescricao() {
+		return descricao;
 	}
 }
