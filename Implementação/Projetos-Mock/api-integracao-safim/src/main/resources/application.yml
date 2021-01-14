@@ -1,4 +1,4 @@
-spring:  datasource:    driver-class-name: org.postgresql.Driver    url: jdbc:postgresql://localhost:5432/bd-view-safim    username: postgres    password: postgres      jpa:    hibernate:      ddl-auto: update    database: postgresql    database-platform: org.hibernate.dialect.PostgreSQLDialect      jackson:    date-format: yyyy-MM-dd    deserialization:      fail-on-unknown-properties: true     logging:  pattern:    console: "%d %-5level %logger : %msg%n"  level:    org.springframewok: info
+spring:  datasource:    driver-class-name: org.postgresql.Driver    url: jdbc:postgresql://localhost:5432/bd-view-safim    username: postgres    password: postgres      jpa:    hibernate:      ddl-auto: none    database: postgresql    database-platform: org.hibernate.dialect.PostgreSQLDialect      jackson:    date-format: yyyy-MM-dd    deserialization:      fail-on-unknown-properties: true     logging:  pattern:    console: "%d %-5level %logger : %msg%n"  level:    org.springframewok: info
 
 server:
   port: 8090  
