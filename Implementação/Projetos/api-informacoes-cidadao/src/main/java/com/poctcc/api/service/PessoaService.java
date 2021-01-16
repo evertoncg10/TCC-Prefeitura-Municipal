@@ -13,7 +13,6 @@ public class PessoaService {
 	private static final String URL_API_SAFIM = "http://localhost:8090/pessoas/";
 
 	public Pessoa findByPessoaSafim(String cpfCnpj) {
-
 		RestTemplate restTemplate = new RestTemplate();
 		Pessoa pessoa = null;
 		if (cpfCnpj.length() == 11) {

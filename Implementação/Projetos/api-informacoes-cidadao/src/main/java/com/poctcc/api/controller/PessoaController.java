@@ -19,10 +19,7 @@ public class PessoaController {
 
 	@GetMapping("/{cpfCnpj}")
 	public ResponseEntity<Pessoa> buscarPessoaPeloCpfCnpj(@PathVariable String cpfCnpj) {
-
-		Pessoa pessoaSafim = pessoaService.findByPessoaSafim(cpfCnpj);
-
-		return ResponseEntity.ok(pessoaSafim);
+		return ResponseEntity.ok(pessoaService.findByPessoaSafim(cpfCnpj));
 	}
 
 }
