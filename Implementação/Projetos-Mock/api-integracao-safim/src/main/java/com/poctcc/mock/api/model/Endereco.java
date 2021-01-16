@@ -50,7 +50,7 @@ public class Endereco {
 
 	@NotNull
 	@Enumerated(EnumType.STRING)
-	@Column(length = 2)
+	@Column(length = 40)
 	private Estado estado;
 
 //	@OneToMany(mappedBy = "endereco")

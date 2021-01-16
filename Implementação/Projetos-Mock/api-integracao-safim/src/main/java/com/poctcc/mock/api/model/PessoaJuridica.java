@@ -27,7 +27,7 @@ public class PessoaJuridica extends Pessoa {
 
 	@NotBlank(message = "A Incrição Estadual não pode ser vazia")
 	@Pattern(regexp = "(((\\d{3})\\.){2}\\d{3}/\\d{4})|(\\d{9}\\.\\d{2}-\\d{2})", message = "A Inscrição Estadual possui formato inválido")
-	@Size(max = 120)
+	@Size(max = 13)
 	/**
 	 * Está sendo considerado a Incrição Estadual no Formato de Minas Gerais.
 	 * Format: "###.###.###/####"

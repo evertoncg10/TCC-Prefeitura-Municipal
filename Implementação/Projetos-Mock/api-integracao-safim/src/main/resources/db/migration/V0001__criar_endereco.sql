@@ -17,4 +17,4 @@ ALTER TABLE public.endereco
     
 INSERT INTO public.endereco (bairro, cep, cidade, estado, logradouro, numero) VALUES ('Canela', '89562600', 'Bom Destino', 'MG', 'Rud Dr Pedro da Fonseca', 365);
 INSERT INTO public.endereco (bairro, cep, cidade, estado, logradouro, numero) VALUES ('Jardim Eldorado', '89555300', 'Bom Destino', 'MG', 'Rua Xavier da Silva', 568);
-INSERT INTO public.endereco (bairro, cep, cidade, estado, logradouro, numero) VALUES ('centro', '89845200', 'Bom Destino', 'MG', 'XV de Novembro', 5623);	
+INSERT INTO public.endereco (bairro, cep, cidade, estado, logradouro, numero) VALUES ('centro', '89845200', 'Bom Destino', 'MG', 'XV de Novembro', 5623);		

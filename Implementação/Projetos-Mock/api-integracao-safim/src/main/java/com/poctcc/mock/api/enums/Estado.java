@@ -2,42 +2,19 @@ package com.poctcc.mock.api.enums;
 
 public enum Estado {
 
-	ACRE("AC", "Acre"), ALAGOAS("AL", "Alagoas"), AMAPA("AP", "Amapá"), AMAZONAS("AM", "Amazonas"),
-	BAHIA("BA", "Bahia"), CEARA("CE", "Ceará"), DISTRITO_FEDERAL("DF", "Distrito Federal"),
-	ESPIRITO_SANTO("ES", "Espírito Santo"), GOIAS("GO", "Goiás"), MARANHAO("MA", "Maranhão"),
-	MATO_GROSSO("MT", "Mato Grosso"), MATO_GROSSO_DO_SUL("MS", "Mato Grosso do Sul"),
-	MINAS_GERAIS("MG", "Minas Gerais"), PARA("PA", "Pará"), PARAIBA("PB", "Paraíba"), PARANA("PR", "Paraná"),
-	PERNAMBUCO("PE", "Pernambuco"), PIAUI("PI", "Piauí"), RIO_DE_JANEIRO("RJ", "Rio de Janeiro"),
-	RIO_GRANDE_DO_NORTE("RN", "Rio Grande do Norte"), RIO_GRANDE_DO_SUL("RS", "Rio Grande do Sul"),
-	RONDONIA("RO", "Rondônia"), RORAIMA("RR", "Roraima"), SANTA_CATARINA("SC", "Santa Catarina"),
-	SAO_PAULO("SP", "São Paulo"), SERGIPE("SE", "Sergipe"), TOCANTINS("TO", "Tocantins");
+	AC("Acre"), AL("Alagoas"), AP("Amapá"), AM("Amazonas"), BA("Bahia"), CE("Ceará"), DF("Distrito Federal"),
+	ES("Espírito Santo"), GO("Goiás"), MA("Maranhão"), MT("Mato Grosso"), MS("Mato Grosso do Sul"), MG("Minas Gerais"),
+	PA("Pará"), PB("Paraíba"), PR("Paraná"), PE("Pernambuco"), PI("Piauí"), RJ("Rio de Janeiro"),
+	RN("Rio Grande do Norte"), RS("Rio Grande do Sul"), RO("Rondônia"), RR("Roraima"), SC("Santa Catarina"),
+	SP("São Paulo"), SE("Sergipe"), TO("Tocantins");
 
-	private final String sigla;
 	private final String descricao;
 
-	Estado(String sigla, String descricao) {
-		this.sigla = sigla;
+	Estado(String descricao) {
 		this.descricao = descricao;
-	}
-
-	public String getSigla() {
-		return sigla;
 	}
 
 	public String getDescricao() {
 		return descricao;
-	}
-
-	public boolean sameOf(String sigla) {
-		return this.sigla.equalsIgnoreCase(sigla);
-	}
-
-	public static Estado of(String sigla) {
-		for (Estado estado : values()) {
-			if (estado.sameOf(sigla)) {
-				return estado;
-			}
-		}
-		return null;
 	}
 }

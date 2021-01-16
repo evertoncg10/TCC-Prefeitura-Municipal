@@ -1,4 +1,4 @@
-package com.poctcc.mock.api.resource;
+package com.poctcc.mock.api.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +12,7 @@ import com.poctcc.mock.api.service.PessoaService;
 
 @RestController
 @RequestMapping("/pessoas")
-public class PessoaResource {
+public class PessoaController {
 
 	@Autowired
 	private PessoaService pessoaService;

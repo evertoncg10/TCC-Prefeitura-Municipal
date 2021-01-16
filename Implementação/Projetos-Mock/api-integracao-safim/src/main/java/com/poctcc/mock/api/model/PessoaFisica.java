@@ -42,7 +42,7 @@ public class PessoaFisica extends Pessoa {
 
 	@NotNull
 	@Enumerated(EnumType.STRING)
-	@Column(length = 1)
+	@Column(length = 10)
 	private Sexo sexo;
 
 	private Long matricula;
