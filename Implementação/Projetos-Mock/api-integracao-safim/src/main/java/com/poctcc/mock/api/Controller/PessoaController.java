@@ -1,4 +1,4 @@
-package com.poctcc.mock.api.Controller;
+package com.poctcc.mock.api.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
