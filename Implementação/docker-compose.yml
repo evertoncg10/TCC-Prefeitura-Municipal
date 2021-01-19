@@ -1,14 +1,6 @@
 version: '2.2'
 
-services:
-  app-cidadao:
-    image: api-informacoes-cidadao-image:latest
-    build:
-      context: ./Projetos/api-informacoes-cidadao
-    container_name: app-cidadao
-    ports:
-      - "8080:8080"
-  
+services:  
   db-safim:
     image: postgres:9.5
     container_name: db-safim
@@ -17,7 +9,7 @@ services:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=bd-view-safim
     ports:
-      - "5432:5432"
+      - "5433:5432"
       
   db-stur:
     image: postgres:9.5
@@ -27,7 +19,7 @@ services:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=bd-view-stur
     ports:
-      - "5433:5432"
+      - "5434:5432"
   
   app-integracao-safim:
     image: api-integracao-safim:latest
@@ -40,11 +32,11 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://db-safim:5432/bd-view-safim
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=postgres
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=none
     ports:
       - "8090:8090"
       
-  app-stur:
+  app-integracao-stur:
     image: api-integracao-stur:latest
     build:
       context: ./Projetos-Mock/api-integracao-stur
@@ -55,6 +47,14 @@ services:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://db-stur:5432/bd-view-stur
       - SPRING_DATASOURCE_USERNAME=postgres
       - SPRING_DATASOURCE_PASSWORD=postgres
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=none
     ports:
       - "8070:8070"
+        
+  app-cidadao:
+    image: api-informacoes-cidadao-image:latest
+    build:
+      context: ./Projetos/api-informacoes-cidadao
+    container_name: app-cidadao
+    ports:
+      - "8080:8080"

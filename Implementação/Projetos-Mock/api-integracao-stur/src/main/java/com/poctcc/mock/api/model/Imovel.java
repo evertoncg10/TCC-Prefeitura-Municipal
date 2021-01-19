@@ -1,6 +1,8 @@
 package com.poctcc.mock.api.model;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,10 +14,12 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import com.poctcc.mock.api.enums.TipoImovel;
 import com.poctcc.mock.api.enums.TipoImposto;
@@ -75,7 +79,17 @@ public class Imovel implements Serializable {/**
 	private TipoImposto tipoImposto;
 	
 	@NotBlank(message = "Obrigatório informar Inscrição Municipal")
+	@Size(max = 10)
 	private String inscricaoMunicipal;
 	
-
+	@Transient
+	private double valorImposto;
+	
+	public void calcularImposto() {
+		BigDecimal valorImovelBig = new BigDecimal(this.valorImovel).setScale(2, RoundingMode.HALF_EVEN);
+		BigDecimal aliquotaBig = new BigDecimal(this.aliquota).setScale(2, RoundingMode.HALF_EVEN);
+		BigDecimal resultado = valorImovelBig.multiply(aliquotaBig).divide(new BigDecimal(100))
+				.setScale(2, RoundingMode.HALF_EVEN); 
+		setValorImposto(resultado.doubleValue());
+	}
 }

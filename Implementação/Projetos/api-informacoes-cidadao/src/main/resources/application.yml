@@ -5,3 +5,13 @@ logging:  pattern:    console: "%d %-5level %logger : %msg%n"
   level:    org.springframework: info
 
 server:  port: 8080
+  
+# Endpoints para apontar ao serviço do SAFIM
+endpoints-safim:
+  dev: http://localhost:8090/pessoas/
+  prod: http://app-integracao-safim:8090/pessoas/
+  
+# Endpoints para apontar ao serviço do SAFIM
+endpoints-stur:
+  dev: http://localhost:8070/pessoas/
+  prod: http://app-integracao-stur:8090/pessoas/

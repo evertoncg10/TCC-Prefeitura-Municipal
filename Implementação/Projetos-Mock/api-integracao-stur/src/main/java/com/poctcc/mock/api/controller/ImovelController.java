@@ -1,5 +1,7 @@
 package com.poctcc.mock.api.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,21 +9,19 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.poctcc.mock.api.model.Pessoa;
-import com.poctcc.mock.api.service.PessoaService;
+import com.poctcc.mock.api.model.Imovel;
+import com.poctcc.mock.api.service.IImovelSerivce;
 
 @RestController
-@RequestMapping("/pessoas")
-public class PessoaController {
-
+@RequestMapping("/imoveis")
+public class ImovelController {
+	
 	@Autowired
-	private PessoaService pessoaService;
-
+	private IImovelSerivce imovelService;
+	
 	@GetMapping("/{cpfCnpj}")
-	public ResponseEntity<Pessoa> buscarPessoaPeloCpfCnpj(@PathVariable String cpfCnpj) {
-
-		Pessoa pessoa = pessoaService.buscarPessoaPeloCpfCnpj(cpfCnpj);
-		return ResponseEntity.ok(pessoa);
+	public ResponseEntity<List<Imovel>> buscarPorCpfCnpj(@PathVariable String cpfCnpj) {
+		return ResponseEntity.ok(imovelService.findImovel(cpfCnpj));
 	}
 
 }
