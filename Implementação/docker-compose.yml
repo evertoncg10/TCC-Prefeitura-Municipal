@@ -58,3 +58,11 @@ services:
     container_name: app-cidadao
     ports:
       - "8080:8080"
+      
+  app-imovel:
+    image: api-imovel:latest
+    build:
+      context: ./Projetos/api-imovel
+    container_name: app-imovel
+    ports:
+      - "8060:8060"
