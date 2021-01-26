@@ -1,5 +1,7 @@
 .header-corpo {
-  height: 250px;
+  min-height: 250px;
+  width: 100%;
+  background-color: #fff;
 }
 
 .header-detalhe-superior {
