@@ -12,6 +12,11 @@ import { LoginComponent } from './views/login/login.component';
 import { HomePortalComponent } from './views/portal/home-portal/home-portal.component';
 import { FooterComponent } from './views/template/footer/footer.component';
 import { HeaderComponent } from './views/template/header/header.component';
+import { ConsultaImoveisComponent } from './views/portal/consulta-imoveis/consulta-imoveis.component';
+import { PainelPessoaFisicaComponent } from './components/painel-pessoa-fisica/painel-pessoa-fisica.component';
+import { PainelPessoaJuridicaComponent } from './components/painel-pessoa-juridica/painel-pessoa-juridica.component';
+import { TituloComponent } from './views/template/titulo/titulo.component';
+import { PainelImoveisComponent } from './components/painel-imoveis/painel-imoveis.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,12 @@ import { HeaderComponent } from './views/template/header/header.component';
     LoginComponent,
     FormLoginComponent,
     HomePortalComponent,
-    ServicosHomePortalComponent
+    ServicosHomePortalComponent,
+    ConsultaImoveisComponent,
+    PainelPessoaFisicaComponent,
+    PainelPessoaJuridicaComponent,
+    TituloComponent,
+    PainelImoveisComponent,
   ],
   imports: [
     BrowserModule,
