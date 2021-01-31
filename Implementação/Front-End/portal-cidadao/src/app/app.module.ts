@@ -18,6 +18,7 @@ import { PainelPessoaJuridicaComponent } from './components/painel-pessoa-juridi
 import { TituloComponent } from './views/template/titulo/titulo.component';
 import { PainelImoveisComponent } from './components/painel-imoveis/painel-imoveis.component';
 import { PortalHeaderComponent } from './views/portal/portal-header/portal-header.component';
+import { ACidadeComponent } from './views/a-cidade/a-cidade.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { PortalHeaderComponent } from './views/portal/portal-header/portal-heade
     TituloComponent,
     PainelImoveisComponent,
     PortalHeaderComponent,
+    ACidadeComponent,
   ],
   imports: [
     BrowserModule,
