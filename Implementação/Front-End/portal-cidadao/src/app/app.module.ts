@@ -17,6 +17,7 @@ import { PainelPessoaFisicaComponent } from './components/painel-pessoa-fisica/p
 import { PainelPessoaJuridicaComponent } from './components/painel-pessoa-juridica/painel-pessoa-juridica.component';
 import { TituloComponent } from './views/template/titulo/titulo.component';
 import { PainelImoveisComponent } from './components/painel-imoveis/painel-imoveis.component';
+import { PortalHeaderComponent } from './views/portal/portal-header/portal-header.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { PainelImoveisComponent } from './components/painel-imoveis/painel-imove
     PainelPessoaJuridicaComponent,
     TituloComponent,
     PainelImoveisComponent,
+    PortalHeaderComponent,
   ],
   imports: [
     BrowserModule,

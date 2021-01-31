@@ -1,0 +1,28 @@
+.portal-header-corpo {
+  min-height: 250px;
+  width: 100%;
+  background-color: #fff;
+}
+
+.portal-header-detalhe-superior {
+  background-color: #0b3d6f;
+  height: 50px;
+}
+
+.portal-header-detalhe-inferior {
+  background-color: #e1192a;
+  height: 6px;
+  box-shadow: 0 2px 3px 1px #868687;
+}
+
+.portal-header-div-logo {
+  display: flex;
+  align-items: center;
+  min-width: 200px;
+  margin: 15px 0 15px 0;
+}
+
+.portal-header-conteudo-corpo {
+  margin-bottom: 20px;
+  text-align: right;
+}
