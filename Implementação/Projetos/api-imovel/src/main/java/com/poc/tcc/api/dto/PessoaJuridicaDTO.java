@@ -13,7 +13,7 @@ public class PessoaJuridicaDTO extends PessoaDTO {
 	 * Está sendo considerado a Incrição Estadual no Formato de Minas Gerais.
 	 * Format: "###.###.###/####"
 	 */
-	private String InscricaoEstadual;
+	private String inscricaoEstadual;
 
 	private String razaoSocial;
 

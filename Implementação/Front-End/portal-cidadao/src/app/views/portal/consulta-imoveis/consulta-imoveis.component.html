@@ -1,12 +1,12 @@
 <app-portal-header></app-portal-header>
 <div class="conteudo">
   <div class="container consulta-imoveis-container">
-    <app-titulo descricao="Dados do Cidadão"></app-titulo>
-    <app-painel-pessoa-fisica *ngIf="true"></app-painel-pessoa-fisica>
-    <app-painel-pessoa-juridica *ngIf="false"></app-painel-pessoa-juridica>
+    <app-titulo descricao="{{titulo}}"></app-titulo>
+    <app-painel-pessoa-fisica *ngIf="isPessoaFisica" [pessoaFisica]="pessoa"></app-painel-pessoa-fisica>
+    <app-painel-pessoa-juridica *ngIf="!isPessoaFisica" [pessoaJuridica]="pessoa"></app-painel-pessoa-juridica>
     <br/> <br/>
     <app-titulo descricao="Dados dos Imóveis"></app-titulo>
-    <app-painel-imoveis></app-painel-imoveis>
+    <app-painel-imoveis [imoveis]="pessoa.imoveis"></app-painel-imoveis>
 
   </div>
 </div>

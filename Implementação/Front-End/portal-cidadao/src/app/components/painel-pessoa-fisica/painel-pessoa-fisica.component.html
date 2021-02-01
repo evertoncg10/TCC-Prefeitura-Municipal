@@ -4,23 +4,18 @@
       <div class="col-12">
         <p>
           <span class="painel-pessoa-fisica-card-titulo">Nome: </span>
-          <span class="painel-pessoa-fisica-card-descricao">Robson da Silva</span>
+          <span class="painel-pessoa-fisica-card-descricao">{{ pessoaFisica.nome }}</span>
         </p>
         <p>
           <span class="painel-pessoa-fisica-card-titulo">CPF: </span>
-          <span class="painel-pessoa-fisica-card-descricao">742.414.590-80</span>
+          <span class="painel-pessoa-fisica-card-descricao">{{ pessoaFisica.cpf | cpf }}</span>
         </p>
         <p>
           <span class="painel-pessoa-fisica-card-titulo">Telefone: </span>
-          <span class="painel-pessoa-fisica-card-descricao">(38) 99896-5412</span>
+          <span class="painel-pessoa-fisica-card-descricao">{{ pessoaFisica.telefone | phone }}</span>
         </p>
         <p>
-          <span class="painel-pessoa-fisica-card-titulo">Endereço: </span>
-          <span class="painel-pessoa-fisica-card-descricao">Rud Dr Pedro da Fonseca, 365 - </span>
-            <span class="painel-pessoa-fisica-card-titulo">Bairro: </span>
-            <span class="painel-pessoa-fisica-card-descricao">Canela - </span>
-            <span class="painel-pessoa-fisica-card-titulo">CEP: </span>
-            <span class="painel-pessoa-fisica-card-descricao">89562-600 - Bom Destino - MG</span>
+          <app-endereco [endereco]="pessoaFisica.endereco"></app-endereco>
         </p>
       </div>
     </div>

@@ -5,6 +5,6 @@ import com.poc.tcc.api.exception.NotFoundException;
 
 public interface IPessoaImovelService {
 	
-	PessoaDTO getImoveisPessoa(String cpfCnpj) throws NotFoundException;
+	PessoaDTO getImoveisPessoa(String cpfCnpj, String token) throws NotFoundException;
 
 }

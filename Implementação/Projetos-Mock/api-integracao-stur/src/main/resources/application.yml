@@ -4,6 +4,8 @@ spring:
     url: jdbc:postgresql://localhost:5432/bd-view-stur
     username: postgres
     password: postgres
+  profiles:
+    active: development
     
   jpa:    hibernate:      ddl-auto: none
     database: postgresql
@@ -16,3 +18,8 @@ logging:  pattern:    console: "%d %-5level %logger : %msg%n"
   level:    org.springframework: info
     
 server:  port: 8070
+  
+  # Endpoints para apontar ao serviço de Autenticação
+endpoints-auth:
+  dev: http://localhost:8081/v1/api/valid/
+  prod: http://app-auth:8081/v1/api/valid/

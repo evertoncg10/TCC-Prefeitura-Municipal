@@ -40,7 +40,7 @@ services:
     image: api-integracao-stur:latest
     build:
       context: ./Projetos-Mock/api-integracao-stur
-    container_name: api-integracao-stur
+    container_name: app-integracao-stur
     depends_on:
       - db-stur
     environment:
@@ -66,3 +66,21 @@ services:
     container_name: app-imovel
     ports:
       - "8060:8060"
+      
+  app-auth:
+    image: api-auth:latest
+    build:
+      context: ./Projetos/api-security
+    container_name: app-auth
+    ports:
+      - "8081:8081"
+
+  portal-cidadao:
+    stdin_open: true
+    tty: true
+    hostname: localhost
+    build:
+      context: ./Front-End/portal-cidadao
+    container_name: portal-cidadao
+    ports:
+      - 80:80

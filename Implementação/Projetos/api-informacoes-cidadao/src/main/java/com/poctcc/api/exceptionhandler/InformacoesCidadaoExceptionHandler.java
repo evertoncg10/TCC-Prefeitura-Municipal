@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import com.poctcc.api.exception.NotFoundException;
+
 @RestControllerAdvice
 public class InformacoesCidadaoExceptionHandler extends ResponseEntityExceptionHandler {
 
@@ -27,6 +29,18 @@ public class InformacoesCidadaoExceptionHandler extends ResponseEntityExceptionH
 	@ExceptionHandler(HttpClientErrorException.class)
 	@ResponseStatus(HttpStatus.NOT_FOUND)
 	public ResponseEntity<Object> handleException(HttpServletRequest req, Exception ex, Model model) {
+
+		String mensagemUsuario = messageSource.getMessage("recurso.nao-encontrado", null,
+				LocaleContextHolder.getLocale());
+		String mensagemDesenvolvedor = messageSource.getMessage("recurso.mensagem_desenvolvedor_recurso_nao_encontrado",
+				null, LocaleContextHolder.getLocale());
+		List<Erro> erros = Arrays.asList(new Erro(mensagemUsuario, mensagemDesenvolvedor));
+		return handleExceptionInternal(ex, erros, new HttpHeaders(), HttpStatus.NOT_FOUND, null);
+	}
+	
+	@ExceptionHandler(NotFoundException.class)
+	@ResponseStatus(HttpStatus.NOT_FOUND)
+	public ResponseEntity<Object> handleExceptionNotFound(HttpServletRequest req, Exception ex, Model model) {
 
 		String mensagemUsuario = messageSource.getMessage("recurso.nao-encontrado", null,
 				LocaleContextHolder.getLocale());

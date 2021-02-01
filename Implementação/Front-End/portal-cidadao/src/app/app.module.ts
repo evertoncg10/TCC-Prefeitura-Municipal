@@ -1,5 +1,7 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import localePt from '@angular/common/locales/pt';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +21,21 @@ import { TituloComponent } from './views/template/titulo/titulo.component';
 import { PainelImoveisComponent } from './components/painel-imoveis/painel-imoveis.component';
 import { PortalHeaderComponent } from './views/portal/portal-header/portal-header.component';
 import { ACidadeComponent } from './views/a-cidade/a-cidade.component';
+import { FormsModule } from '@angular/forms';
+import { CpfPipe } from './pipes/cpf.pipe';
+import { CnpjPipe } from './pipes/cnpj.pipe';
+import { PhonePipe } from './pipes/phone.pipe';
+import { InscricaoEstadualPipe } from './pipes/inscricao-estadual.pipe';
+import { EnderecoComponent } from './components/endereco/endereco.component';
+import { InscricaoMunicipalPipe } from './pipes/inscricao-municipal.pipe';
+import { registerLocaleData } from '@angular/common';
+import { CepPipe } from './pipes/cep.pipe';
+import { JwtInterceptor } from './auth/jwt.interceptor';
+import { ErrorInterceptor } from './auth/error.interceptor';
+import { LoaderModule } from './modules/loader/loader.module';
+import { LoaderInterceptor } from './auth/loader.interceptor';
+
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -39,12 +56,27 @@ import { ACidadeComponent } from './views/a-cidade/a-cidade.component';
     PainelImoveisComponent,
     PortalHeaderComponent,
     ACidadeComponent,
+    CpfPipe,
+    CnpjPipe,
+    PhonePipe,
+    InscricaoEstadualPipe,
+    EnderecoComponent,
+    InscricaoMunicipalPipe,
+    CepPipe,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    LoaderModule
   ],
-  providers: [],
+  providers: [
+    { provide: LOCALE_ID, useValue: 'pt-BR' },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

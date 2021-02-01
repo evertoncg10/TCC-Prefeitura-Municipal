@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth/auth.guard';
 
 import { ACidadeComponent } from './views/a-cidade/a-cidade.component';
 import { HomeComponent } from './views/home/home.component';
@@ -8,12 +9,12 @@ import { ConsultaImoveisComponent } from './views/portal/consulta-imoveis/consul
 import { HomePortalComponent } from './views/portal/home-portal/home-portal.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'a-cidade', component: ACidadeComponent},
-  {path: 'portal/home', component: HomePortalComponent},
-  {path: 'portal/imoveis', component: ConsultaImoveisComponent}
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'a-cidade', component: ACidadeComponent },
+  { path: 'portal/home', component: HomePortalComponent, canActivate: [AuthGuard] },
+  { path: 'portal/imoveis/:cpfCnpj', component: ConsultaImoveisComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({

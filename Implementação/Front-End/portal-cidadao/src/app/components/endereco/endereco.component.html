@@ -1,0 +1,6 @@
+<span class="painel-endereco-card-titulo">Endereço: </span>
+<span class="painel-endereco-card-descricao">{{ endereco.logradouro }}, nº {{ endereco.numero }} - </span>
+<span class="painel-endereco-card-titulo">Bairro: </span>
+<span class="painel-endereco-card-descricao">{{ endereco.bairro }} - </span>
+<span class="painel-endereco-card-titulo">CEP: </span>
+<span class="painel-endereco-card-descricao">{{ endereco.cep | cep }} - {{ endereco.cidade }} - {{ endereco.estado }}</span>

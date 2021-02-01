@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { PessoaJuridica } from 'src/app/models/PessoaJuridica';
 
 @Component({
   selector: 'app-painel-pessoa-juridica',
@@ -9,7 +10,10 @@ export class PainelPessoaJuridicaComponent implements OnInit {
 
   constructor() { }
 
+  @Input() pessoaJuridica: PessoaJuridica;
+
   ngOnInit(): void {
+    if(!this.pessoaJuridica) this.pessoaJuridica = new PessoaJuridica();
   }
 
 }

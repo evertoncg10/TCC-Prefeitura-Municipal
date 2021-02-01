@@ -17,3 +17,10 @@
 .painel-imoveis-card-descricao {
   font-size: 1.2rem;
 }
+
+.painel-alerta {
+  min-height: 50px;
+  margin-top: 40px;
+  width: 100%;
+  padding: 10px;
+}

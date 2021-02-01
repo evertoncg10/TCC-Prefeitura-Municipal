@@ -1,13 +1,13 @@
 <div class="row">
-  <h4>Seja bem vindo João da Silva</h4>
+  <h4>Seja bem vindo {{ nomeUsuario }}</h4>
   <div class="col-12 servicos-home-portal-linha-detalhe"></div>
 
   <!--Card Cidadão-->
-  <div *ngIf="true" class="card servicos-home-portal-card-principal">
+  <div *ngIf="isCidadao" class="card servicos-home-portal-card-principal">
     <div class="card-body">
       <div class="row">
         <div class="col-sm-12 col-md-6 col-lg-4 servicos-home-portal-icone-estrutura">
-          <a routerLink="/portal/imoveis">
+          <a routerLink="" (click)="consultarImposto()">
             <div class="servicos-home-portal-icone-corpo">
               <div class="servicos-home-portal-icone">
                 <i class="fa fa-home fa-4x" aria-hidden="true"></i>
@@ -80,7 +80,7 @@
   </div>
 
   <!--Card Servidor-->
-  <div *ngIf="false" class="card servicos-home-portal-card-principal">
+  <div *ngIf="!isCidadao" class="card servicos-home-portal-card-principal">
     <div class="card-body">
       <div class="row">
         <div class="col-sm-12 col-md-6 col-lg-4 servicos-home-portal-icone-estrutura">

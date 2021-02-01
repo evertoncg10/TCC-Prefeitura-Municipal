@@ -1,124 +1,65 @@
 <!-- Fazer o *ngFor na div abaixo da classe row -->
-<div class="row">
-  <div class="card painel-imoveis-card-principal">
-    <div class="row painel-imoveis-card-row">
-      <div class="col-12">
-        <p>
-          <span class="painel-imoveis-card-titulo">Inscrição Municipal: </span>
-          <span class="painel-imoveis-card-descricao">524.978.632</span>
-        </p>
+<div class="row" *ngIf="imoveis.length > 0; else semImoveis">
+  <ng-template ngFor let-item [ngForOf]="imoveis">
+    <div class="card painel-imoveis-card-principal">
+      <div class="row painel-imoveis-card-row">
+        <div class="col-12">
+          <p>
+            <span class="painel-imoveis-card-titulo">Inscrição Municipal: </span>
+            <span class="painel-imoveis-card-descricao">{{ item.inscricaoMunicipal | inscricaoMunicipal }}</span>
+          </p>
 
-        <p>
-          <span class="painel-imoveis-card-titulo">Tipo do Imóvel: </span>
-          <span class="painel-imoveis-card-descricao">Casa</span>
-        </p>
+          <p>
+            <span class="painel-imoveis-card-titulo">Tipo do Imóvel: </span>
+            <span class="painel-imoveis-card-descricao">{{ item.tipoImovel }}</span>
+          </p>
 
-        <p>
-          <span class="painel-imoveis-card-titulo">Valor do Imóvel: </span>
-          <span class="painel-imoveis-card-descricao">R$ 150.000,00</span>
-        </p>
+          <p>
+            <span class="painel-imoveis-card-titulo">Valor do Imóvel: </span>
+            <span class="painel-imoveis-card-descricao">{{ item.valorImovel | currency:'BRL':true }}</span>
+          </p>
 
-        <p>
-          <span class="painel-imoveis-card-titulo">Área Construida: </span>
-          <span class="painel-imoveis-card-descricao">45,25 m²</span>
-        </p>
+          <p>
+            <span class="painel-imoveis-card-titulo">Área Construida: </span>
+            <span class="painel-imoveis-card-descricao">{{ item.areaConstruida | number }} m²</span>
+          </p>
 
-        <p>
-          <span class="painel-imoveis-card-titulo">Área Total: </span>
-          <span class="painel-imoveis-card-descricao">60,25 m²</span>
-        </p>
+          <p>
+            <span class="painel-imoveis-card-titulo">Área Total: </span>
+            <span class="painel-imoveis-card-descricao">{{ item.areaTotal | number }} m²</span>
+          </p>
 
-        <p>
-          <span class="painel-imoveis-card-titulo">Endereço: </span>
-          <span class="painel-imoveis-card-descricao">Rud Dr Pedro da Fonseca, 365 - </span>
-            <span class="painel-imoveis-card-titulo">Bairro: </span>
-            <span class="painel-imoveis-card-descricao">Canela - </span>
-            <span class="painel-imoveis-card-titulo">CEP: </span>
-            <span class="painel-imoveis-card-descricao">89562-600 - Bom Destino - MG</span>
-        </p>
+          <p>
+            <app-endereco [endereco]="item.endereco"></app-endereco>
+          </p>
 
-        <br>
-        <app-titulo descricao="Dados do Imposto"></app-titulo>
-        <br>
+          <br>
+          <app-titulo descricao="Dados do Imposto"></app-titulo>
+          <br>
 
-        <p>
-          <span class="painel-imoveis-card-titulo">Tipo de Imposto: </span>
-          <span class="painel-imoveis-card-descricao">IPTU</span>
-        </p>
+          <p>
+            <span class="painel-imoveis-card-titulo">Tipo de Imposto: </span>
+            <span class="painel-imoveis-card-descricao">{{ item.tipoImposto }}</span>
+          </p>
 
-        <p>
-          <span class="painel-imoveis-card-titulo">Alíquota: </span>
-          <span class="painel-imoveis-card-descricao">1,0 %</span>
-        </p>
+          <p>
+            <span class="painel-imoveis-card-titulo">Alíquota: </span>
+            <span class="painel-imoveis-card-descricao">{{ item.aliquota | percent }}</span>
+          </p>
 
-        <p>
-          <span class="painel-imoveis-card-titulo">Valor a Pagar Imposto: </span>
-          <span class="painel-imoveis-card-descricao">R$ 1.500,00</span>
-        </p>
+          <p>
+            <span class="painel-imoveis-card-titulo">Valor a Pagar Imposto: </span>
+            <span class="painel-imoveis-card-descricao">{{ item.valorImposto | currency:'BRL':true }}</span>
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-
-  <!-- Deletar depois que fazer o ngFor -->
-  <div class="card painel-imoveis-card-principal">
-    <div class="row painel-imoveis-card-row">
-      <div class="col-12">
-        <p>
-          <span class="painel-imoveis-card-titulo">Inscrição Municipal: </span>
-          <span class="painel-imoveis-card-descricao">524.978.632</span>
-        </p>
-
-        <p>
-          <span class="painel-imoveis-card-titulo">Tipo do Imóvel: </span>
-          <span class="painel-imoveis-card-descricao">Casa</span>
-        </p>
-
-        <p>
-          <span class="painel-imoveis-card-titulo">Valor do Imóvel: </span>
-          <span class="painel-imoveis-card-descricao">R$ 150.000,00</span>
-        </p>
-
-        <p>
-          <span class="painel-imoveis-card-titulo">Área Construida: </span>
-          <span class="painel-imoveis-card-descricao">45,25 m²</span>
-        </p>
-
-        <p>
-          <span class="painel-imoveis-card-titulo">Área Total: </span>
-          <span class="painel-imoveis-card-descricao">60,25 m²</span>
-        </p>
-
-        <p>
-          <span class="painel-imoveis-card-titulo">Endereço: </span>
-          <span class="painel-imoveis-card-descricao">Rud Dr Pedro da Fonseca, 365 - </span>
-            <span class="painel-imoveis-card-titulo">Bairro: </span>
-            <span class="painel-imoveis-card-descricao">Canela - </span>
-            <span class="painel-imoveis-card-titulo">CEP: </span>
-            <span class="painel-imoveis-card-descricao">89562-600 - Bom Destino - MG</span>
-        </p>
-
-        <br>
-        <app-titulo descricao="Dados do Imposto"></app-titulo>
-        <br>
-
-        <p>
-          <span class="painel-imoveis-card-titulo">Tipo de Imposto: </span>
-          <span class="painel-imoveis-card-descricao">IPTU</span>
-        </p>
-
-        <p>
-          <span class="painel-imoveis-card-titulo">Alíquota: </span>
-          <span class="painel-imoveis-card-descricao">1,0 %</span>
-        </p>
-
-        <p>
-          <span class="painel-imoveis-card-titulo">Valor a Pagar Imposto: </span>
-          <span class="painel-imoveis-card-descricao">R$ 1.500,00</span>
-        </p>
-      </div>
-    </div>
-  </div>
-   <!-- Fim Deletar depois que fazer o ngFor -->
+  </ng-template>
 </div>
-
-
+<ng-template #semImoveis>
+  <div class="painel-alerta col-12">
+    <div  class="alert alert-warning">
+      Não há imóveis cadastrados. Favor verificar com a Secretaria de Fazenda (SEFAZ) e Secretaria de Arquitetura e Urbanismo (SECAU)
+    </div>
+  </div>
+</ng-template>

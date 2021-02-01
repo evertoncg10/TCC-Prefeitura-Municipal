@@ -8,4 +8,6 @@ import com.poctcc.mock.api.model.PessoaFisica;
 public interface PessoaFisicaRepository extends JpaRepository<PessoaFisica, Long> {
 
 	public Pessoa findByCpf(String cpf);
+	
+	public Pessoa findByEmail(String email);
 }

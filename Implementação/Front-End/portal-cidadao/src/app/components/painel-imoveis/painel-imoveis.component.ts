@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Imovel } from 'src/app/models/Imovel';
 
 @Component({
   selector: 'app-painel-imoveis',
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class PainelImoveisComponent implements OnInit {
 
   constructor() { }
+
+  @Input() imoveis: Imovel[];
 
   ngOnInit(): void {
   }
