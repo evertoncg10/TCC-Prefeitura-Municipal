@@ -34,7 +34,7 @@ public class PessoaImovelController {
 			autenticacaoService.validaAuth(token);
 		} catch (AuthenticationException e) {
 			// TODO Auto-generated catch block
-			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Acesso negado");
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Sua sessão expirou");
 		}
 		return ResponseEntity.ok(pessoaImovelService.getImoveisPessoa(cpfCnpj, token));
 	}

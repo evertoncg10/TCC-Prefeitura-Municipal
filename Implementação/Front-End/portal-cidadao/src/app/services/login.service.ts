@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { Usuario } from '../models/Usuario';
 import { UsuarioLogado } from '../models/UsuarioLogado';
 
@@ -25,7 +26,7 @@ export class LoginService {
   login(usuario: Usuario) {
     let usuarioLogado = new UsuarioLogado();
     usuarioLogado.username = usuario.username;
-    return this.httpClient.post<UsuarioLogado>('http://localhost:8081/v1/api/auth/signin', usuario)
+    return this.httpClient.post<UsuarioLogado>(environment.apiAuth, usuario)
     .pipe(map(logged => {
       if(logged) {
         localStorage.setItem('currentUser', JSON.stringify(logged));

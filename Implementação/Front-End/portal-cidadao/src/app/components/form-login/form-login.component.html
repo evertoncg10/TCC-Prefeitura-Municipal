@@ -3,7 +3,7 @@
     <div class="card form-login-card">
       <div *ngIf="error" class="alert alert-danger alert-dismissible fade show" role="alert">
         {{ error }}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <button type="button" (click)="error = ''" class="close" data-dismiss="alert" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -15,7 +15,7 @@
         </div>
         <div class="form-group">
           <label for="senha">Senha</label>
-          <input [(ngModel)]="usuario.password" type="password" name="senha" class="form-control" placeholder="Digite sua senha">
+          <input [(ngModel)]="usuario.password" type="password" name="senha" class="form-control" placeholder="Digite sua senha" (keyup.enter)="login()">
         </div>
         <div>
           <button type="button" class="btn btn-primary form-login-botao-entrar" (click)="login()">Entrar</button>

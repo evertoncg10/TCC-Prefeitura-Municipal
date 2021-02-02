@@ -37,13 +37,13 @@ export class FormLoginComponent implements OnInit {
 
   validaCamposUsuario() {
     if((this.usuario.username == null || this.usuario.username === '') 
-        && (this.usuario.password == null || this.usuario.password == null)) {
+        && (this.usuario.password == null || this.usuario.password === '')) {
       this.error = 'Os campos devem ser preenchidos';
       return false;
     } else if(this.usuario.username == null || this.usuario.username === '') {
       this.error = 'O campo usuário é obrigatório';
       return false;
-    } else if(this.usuario.password == null || this.usuario.password == null) {
+    } else if(this.usuario.password == null || this.usuario.password === '') {
       this.error = 'O campo senha é obrigatório';
       return false;
     }
