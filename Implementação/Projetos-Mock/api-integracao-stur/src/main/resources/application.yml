@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/bd-view-stur
+    url: jdbc:postgresql://34.69.154.232:5432/bd-view-stur
     username: postgres
     password: postgres
   profiles:
@@ -22,4 +22,4 @@ server:  port: 8070
   # Endpoints para apontar ao serviço de Autenticação
 endpoints-auth:
   dev: http://localhost:8081/v1/api/valid/
-  prod: http://app-auth:8081/v1/api/valid/
+  prod: http://34.69.154.232:8081/v1/api/valid/

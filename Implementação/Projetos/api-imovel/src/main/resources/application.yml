@@ -14,14 +14,14 @@ server:
 # Endpoints para apontar ao serviço do SAFIM
 endpoints-cidadao:
   dev: http://localhost:8080/pessoas/
-  prod: http://app-cidadao:8080/pessoas/
+  prod: http://34.69.154.232:8080/pessoas/
   
 # Endpoints para apontar ao serviço do STUR
 endpoints-stur:
   dev: http://localhost:8070/imoveis/
-  prod: http://app-integracao-stur:8070/imoveis/
+  prod: http://34.69.154.232:8070/imoveis/
   
   # Endpoints para apontar ao serviço de Autenticação
 endpoints-auth:
   dev: http://localhost:8081/v1/api/valid/
-  prod: http://app-auth:8081/v1/api/valid/
+  prod: http://34.69.154.232:8081/v1/api/valid/

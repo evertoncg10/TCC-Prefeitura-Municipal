@@ -9,9 +9,9 @@ server:  port: 8080
 # Endpoints para apontar ao serviço do SAFIM
 endpoints-safim:
   dev: http://localhost:8090/pessoas/
-  prod: http://app-integracao-safim:8090/pessoas/
+  prod: http://34.69.154.232:8090/pessoas/
   
   # Endpoints para apontar ao serviço de Autenticação
 endpoints-auth:
   dev: http://localhost:8081/v1/api/valid/
-  prod: http://app-auth:8081/v1/api/valid/
+  prod: http://34.69.154.232:8081/v1/api/valid/
