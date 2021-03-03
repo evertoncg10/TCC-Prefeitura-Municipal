@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "curious-idea-303522",
+  "private_key_id": "9c1ec542a2af9b44e1e9f1936e0a3f65aa644cb7",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDzqcR6azsVFhHp\npgGuuKYOy7ao+nYZ10TxArh8Pg8GHZB5dSQbgJiqgtWXaLt0kyMmtInEKXCKPJXo\n+C25o51m8euD97MZy4rTIB7od1P24shp07tc+JmPIlHwB3gR8pqF7QKjh3RpCcHx\nHQWWDIKrR94o7PICfI44JkzvnOMHwxYxDCCRcOgFEp7oDzdKwJipOlA5ijoMC0V+\nBbeg9viamYP4q3dwXFYfKW5e55m5Kx3MrHvsRjUri3QagpXRYQG0NeqorT++zTot\nPcfVOi+qoCGceoHOfNvUgnU9uOgkKAkqjh/e8scogpRNoTgUms5DN/SihVFzmaKA\nEV5mgW0lAgMBAAECggEAbLfnaD3XJ1HpHSjKYGSYB0sCzcOvFVmVM7okiZ8BAhgH\n4gGP4kuPEql81ulOlrWd/gOY4rMguTVOKBwv/sAPl6LClGfdfFlysEAJOm0fxC0t\nAfcMhu+PSKumBqS2gL+QDciSIFfsa3+EjuoFl40ucnEHIZiTZOOha1E/i7wjGk8l\nAsDO4XbGBSWrgQMJKc0KIwGFMoMwM/q5mPUKeFBi8jh2hoaXF2ymvRDwlynua3sI\nrXX4hjtFdPFv1oyMmjk/ARzrMI2Y7nZy5Fx69Q483nw8RgY+cWzw1whiP6t0Vv7S\nwR3RLQ5YawyL6Gu4dgengVKys7K6+6bh1AcXvKZaYwKBgQD7PMmmX3FgQSRa6IBg\nPd6UhyU4bil3ZTngaz7llx5tpfT4PWamGr9T7+ySJoMPbE/eixNqtoE7H9gDQtGo\nADELJ7WN5Yn8S7J04wWnnxR6vQKu6jf2CqFqpRaGG9JsNEGiFvxFrgI+hvHSXy8X\nI3JwE2RnJFu/zNiNyNh6XFqUpwKBgQD4SDkYc4esrQAkL8GrDhtURwe36JSInYni\nyxizAj5iO3gLK0wNbAuI8qLiy0zrXBlG6YmkQHuKc8lJH2f1FwL6wtVpU1IJFgV/\ngO7H2+TBpZODeg4DhxHxK48Qbi2W7aByOMAPs22L4UlmBUx9LL20eAHG9r2+pagc\n3Nv6ustNUwKBgCSp7lOVQhpl50RNAc8JuF28izX8/Zgq8ZNKk1c2An7F5UYEz+IV\nrS42qTN6401w5Qb5DNBZ6eoS75cqPSZjQMT7+obGpKho85YTO1QG5xoyUx3rmFcT\nnhLOHMddcAvSZHGfIRmaF0HAt7GXqmuaBK1OZyyWJb2Ly16FnPHeYGmpAoGAGQ2I\nnVwDA7yNOBmNjEonHdDxCXCxlDt5T2Y4/s8qJlVj3pSm3u/ZFh+Nqh7jixhHAK3O\nEsHi9WyLkhJWNhf1WAJS8IbUz0/mjCAheA9LPPMNOIYXZem6OMCxdfH4LbOargvl\n7W+ojSXVdzLvre3W0qANZds9+D/U/9yVYe55VzsCgYEAmXLYmyg/E7sJmk7+r9U9\nFHRYgz7XJScN5VOqM5EQnqP18o1xkIUmcL8J6a7ntjn7IIdy7UxY7lZHbZlCIT6t\n+mIc0X8LG/1dxuq61AYNTCOUduwKOn4vrwQ8NkEkaIjJbHLC1htWbUAHFcsO+2Hw\nv9eP9oDMXTZ5eWKSOavInmU=\n-----END PRIVATE KEY-----\n",
+  "client_email": "app-database-spring@curious-idea-303522.iam.gserviceaccount.com",
+  "client_id": "118396191866793948254",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/app-database-spring%40curious-idea-303522.iam.gserviceaccount.com"
+}

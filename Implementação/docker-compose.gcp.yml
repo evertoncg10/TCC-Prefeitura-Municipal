@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+ app-integracao-safim:
+   image: gcr.io/curious-idea-303522/app-integracao-safim:${DOCKER_IMAGE_TAG:-latest}
+ app-integracao-stur:
+   image: gcr.io/curious-idea-303522/app-integracao-stur:${DOCKER_IMAGE_TAG:-latest}
+ app-cidadao:
+   image: gcr.io/curious-idea-303522/app-cidadao:${DOCKER_IMAGE_TAG:-latest}
+ app-imovel:
+   image: gcr.io/curious-idea-303522/app-imovel:${DOCKER_IMAGE_TAG:-latest}
+ app-auth:
+   image: gcr.io/curious-idea-303522/app-auth:${DOCKER_IMAGE_TAG:-latest}
+ portal-cidadao:
+   image: gcr.io/curious-idea-303522/portal-cidadao:${DOCKER_IMAGE_TAG:-latest}

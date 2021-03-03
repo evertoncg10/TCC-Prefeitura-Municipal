@@ -1,5 +1,5 @@
-version: '2.2'
-
+version: '3'
+# Databases somente local
 services:  
   db-safim:
     image: postgres:9.5
