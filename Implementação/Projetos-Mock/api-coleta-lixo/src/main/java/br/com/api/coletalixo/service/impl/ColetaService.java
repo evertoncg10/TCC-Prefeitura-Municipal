@@ -18,6 +18,9 @@ public class ColetaService implements IColetaService {
 	@Autowired
 	private ColetaRepository repository;
 	
+	@Autowired
+	private ModelMapper modelMapper;
+	
 	@Override
 	public List<ColetaDTO> listarTodos() {
 		return repository.findAll()
@@ -27,7 +30,7 @@ public class ColetaService implements IColetaService {
 	}
 	
 	private ColetaDTO converteParaDto(Coleta coleta) {
-		return new ModelMapper().map(coleta, ColetaDTO.class);
+		return modelMapper.map(coleta, ColetaDTO.class);
 	}
 
 }

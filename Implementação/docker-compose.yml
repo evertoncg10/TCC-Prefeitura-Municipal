@@ -20,6 +20,16 @@ services:
       - POSTGRES_DB=bd-view-stur
     ports:
       - "5434:5432"
+      
+  db-coleta-lixo:
+    image: postgres:9.5
+    container_name: db-coleta-lixo
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=bd-coleta-lixo
+    ports:
+      - "5435:5432"
   
   app-integracao-safim:
     image: api-integracao-safim:latest
@@ -74,6 +84,21 @@ services:
     container_name: app-auth
     ports:
       - "8081:8081"
+    
+  app-coleta-lixo:
+    image: api-coleta-lixo
+    build:
+      context: ./Projetos-Mock/api-coleta-lixo
+    container_name: app-coleta-lixo
+    depends_on:
+      - db-coleta-lixo
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db-coleta-lixo:5432/bd-coleta-lixo
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=none
+    ports:
+      - "4060:4060"
 
   portal-cidadao:
     stdin_open: true
