@@ -1,0 +1,65 @@
+<!-- Fazer o *ngFor na div abaixo da classe row -->
+<div class="row" *ngIf="imoveis.length > 0; else semImoveis">
+  <ng-template ngFor let-item [ngForOf]="imoveis">
+    <div class="card painel-imoveis-card-principal">
+      <div class="row painel-imoveis-card-row">
+        <div class="col-12">
+          <p>
+            <span class="painel-imoveis-card-titulo">Inscrição Municipal: </span>
+            <span class="painel-imoveis-card-descricao">{{ item.inscricaoMunicipal | inscricaoMunicipal }}</span>
+          </p>
+
+          <p>
+            <span class="painel-imoveis-card-titulo">Tipo do Imóvel: </span>
+            <span class="painel-imoveis-card-descricao">{{ item.tipoImovel }}</span>
+          </p>
+
+          <p>
+            <span class="painel-imoveis-card-titulo">Valor do Imóvel: </span>
+            <span class="painel-imoveis-card-descricao">{{ item.valorImovel | currency:'BRL':true }}</span>
+          </p>
+
+          <p>
+            <span class="painel-imoveis-card-titulo">Área Construida: </span>
+            <span class="painel-imoveis-card-descricao">{{ item.areaConstruida | number }} m²</span>
+          </p>
+
+          <p>
+            <span class="painel-imoveis-card-titulo">Área Total: </span>
+            <span class="painel-imoveis-card-descricao">{{ item.areaTotal | number }} m²</span>
+          </p>
+
+          <p>
+            <app-endereco [endereco]="item.endereco"></app-endereco>
+          </p>
+
+          <br>
+          <app-titulo descricao="Dados do Imposto"></app-titulo>
+          <br>
+
+          <p>
+            <span class="painel-imoveis-card-titulo">Tipo de Imposto: </span>
+            <span class="painel-imoveis-card-descricao">{{ item.tipoImposto }}</span>
+          </p>
+
+          <p>
+            <span class="painel-imoveis-card-titulo">Alíquota: </span>
+            <span class="painel-imoveis-card-descricao">{{ item.aliquota | percent }}</span>
+          </p>
+
+          <p>
+            <span class="painel-imoveis-card-titulo">Valor a Pagar Imposto: </span>
+            <span class="painel-imoveis-card-descricao">{{ item.valorImposto | currency:'BRL':true }}</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</div>
+<ng-template #semImoveis>
+  <div class="painel-alerta col-12">
+    <div  class="alert alert-warning">
+      Não há imóveis cadastrados. Favor verificar com a Secretaria de Fazenda (SEFAZ) e Secretaria de Arquitetura e Urbanismo (SECAU)
+    </div>
+  </div>
+</ng-template>

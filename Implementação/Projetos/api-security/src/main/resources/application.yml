@@ -1,0 +1,11 @@
+# Conexão base MongoDB Atlas
+spring:  data:    mongodb:      uri: mongodb+srv://poctcc:poctcc123@cluster0.n3y3i.mongodb.net/poctccauth?retryWrites=true&w=majority
+      database: poctccauth
+      
+# Configurações JWT
+poctcc:
+  app:
+    jwtSecret: pocPucTccSecretKey
+    jwtExpirationMs: 120000
+    
+server:  port: 8081

@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active: prod
+
+logging:
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+  level:
+    org.springframework: info
+
+server:
+  port: 8060
+  
+# Endpoints para apontar ao serviço do SAFIM
+endpoints-cidadao:
+  dev: http://localhost:8080/pessoas/
+  prod: http://34.69.154.232:8080/pessoas/
+  
+# Endpoints para apontar ao serviço do STUR
+endpoints-stur:
+  dev: http://localhost:8070/imoveis/
+  prod: http://34.69.154.232:8070/imoveis/
+  
+  # Endpoints para apontar ao serviço de Autenticação
+endpoints-auth:
+  dev: http://localhost:8081/v1/api/valid/
+  prod: http://34.69.154.232:8081/v1/api/valid/

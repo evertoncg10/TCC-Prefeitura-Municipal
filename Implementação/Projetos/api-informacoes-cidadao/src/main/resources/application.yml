@@ -1,19 +1,17 @@
 spring:
-  profiles:    active: development
-    
-  datasource:    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/bd-cidadao
-    username: postgres
-    password: postgres
-    
-  jpa:    hibernate:      ddl-auto: update
-    database: postgresql
-    database-platform: org.hibernate.dialect.PostgreSQLDialect
-    open-in-view: false
-    generate-ddl: true
+  profiles:    active: prod
 
 logging:  pattern:    console: "%d %-5level %logger : %msg%n"
   level:    org.springframework: info
-    org.hibernate: debug
 
 server:  port: 8080
+  
+# Endpoints para apontar ao serviço do SAFIM
+endpoints-safim:
+  dev: http://localhost:8090/pessoas/
+  prod: http://34.69.154.232:8090/pessoas/
+  
+  # Endpoints para apontar ao serviço de Autenticação
+endpoints-auth:
+  dev: http://localhost:8081/v1/api/valid/
+  prod: http://34.69.154.232:8081/v1/api/valid/

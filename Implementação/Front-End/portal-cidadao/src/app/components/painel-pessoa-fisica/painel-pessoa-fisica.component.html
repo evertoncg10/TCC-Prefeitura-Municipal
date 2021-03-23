@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="card painel-pessoa-fisica-card-principal">
+    <div class="row painel-pessoa-fisica-card-row">
+      <div class="col-12">
+        <p>
+          <span class="painel-pessoa-fisica-card-titulo">Nome: </span>
+          <span class="painel-pessoa-fisica-card-descricao">{{ pessoaFisica.nome }}</span>
+        </p>
+        <p>
+          <span class="painel-pessoa-fisica-card-titulo">CPF: </span>
+          <span class="painel-pessoa-fisica-card-descricao">{{ pessoaFisica.cpf | cpf }}</span>
+        </p>
+        <p>
+          <span class="painel-pessoa-fisica-card-titulo">Telefone: </span>
+          <span class="painel-pessoa-fisica-card-descricao">{{ pessoaFisica.telefone | phone }}</span>
+        </p>
+        <p>
+          <app-endereco [endereco]="pessoaFisica.endereco"></app-endereco>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

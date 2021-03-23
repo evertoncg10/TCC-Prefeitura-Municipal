@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="card painel-pessoa-juridica-card-principal">
+    <div class="row painel-pessoa-juridica-card-row">
+      <div class="col-12">
+        <p>
+          <span class="painel-pessoa-juridica-card-titulo">Razão Social: </span>
+          <span class="painel-pessoa-juridica-card-descricao">{{ pessoaJuridica.razaoSocial }}</span>
+        </p>
+
+        <p>
+          <span class="painel-pessoa-juridica-card-titulo">Nome Fantasia: </span>
+          <span class="painel-pessoa-juridica-card-descricao">{{ pessoaJuridica.nomeFantasia }}</span>
+        </p>
+
+        <p>
+          <span class="painel-pessoa-juridica-card-titulo">CNPJ: </span>
+          <span class="painel-pessoa-juridica-card-descricao">{{ pessoaJuridica.cnpj | cnpj }}</span>
+        </p>
+
+        <p>
+          <span class="painel-pessoa-juridica-card-titulo">Inscricao Estadual: </span>
+          <span class="painel-pessoa-juridica-card-descricao">{{ pessoaJuridica.inscricaoEstadual | ieMG }}</span>
+        </p>
+
+        <p>
+          <span class="painel-pessoa-juridica-card-titulo">Telefone: </span>
+          <span class="painel-pessoa-juridica-card-descricao">{{ pessoaJuridica.telefone | phone }}</span>
+        </p>
+
+        <p>
+          <app-endereco [endereco]="pessoaJuridica.endereco"></app-endereco>
+        </p>
+
+      </div>
+    </div>
+  </div>
+</div>
+

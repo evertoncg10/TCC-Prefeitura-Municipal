@@ -1,35 +1,111 @@
-version: '2.2'
-
-services:
-  app-cidadao:
-    image: api-informacoes-cidadao-image:latest
-    build:
-      context: ./Projetos/api-informacoes-cidadao
-    container_name: app-cidadao
-    depends_on: 
-      - db
-    environment: 
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/bd-cidadao
-      - SPRING_DATASOURCE_USERNAME=postgres
-      - SPRING_DATASOURCE_PASSWORD=postgres
-      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
-    ports:
-      - "8080:8080"
-  
-  db:
+version: '3'
+# Databases somente local
+services:  
+  db-safim:
     image: postgres:9.5
-    container_name: db
+    container_name: db-safim
     environment: 
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=bd-cidadao
+      - POSTGRES_DB=bd-view-safim
     ports:
-      - "5432:5432"
+      - "5433:5432"
+      
+  db-stur:
+    image: postgres:9.5
+    container_name: db-stur
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=bd-view-stur
+    ports:
+      - "5434:5432"
+      
+  db-coleta-lixo:
+    image: postgres:9.5
+    container_name: db-coleta-lixo
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=bd-coleta-lixo
+    ports:
+      - "5435:5432"
   
   app-integracao-safim:
     image: api-integracao-safim:latest
     build:
       context: ./Projetos-Mock/api-integracao-safim
     container_name: app-integracao-safim
+    depends_on: 
+      - db-safim
+    environment: 
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db-safim:5432/bd-view-safim
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=none
     ports:
       - "8090:8090"
+      
+  app-integracao-stur:
+    image: api-integracao-stur:latest
+    build:
+      context: ./Projetos-Mock/api-integracao-stur
+    container_name: app-integracao-stur
+    depends_on:
+      - db-stur
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db-stur:5432/bd-view-stur
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=none
+    ports:
+      - "8070:8070"
+        
+  app-cidadao:
+    image: api-informacoes-cidadao-image:latest
+    build:
+      context: ./Projetos/api-informacoes-cidadao
+    container_name: app-cidadao
+    ports:
+      - "8080:8080"
+      
+  app-imovel:
+    image: api-imovel:latest
+    build:
+      context: ./Projetos/api-imovel
+    container_name: app-imovel
+    ports:
+      - "8060:8060"
+      
+  app-auth:
+    image: api-auth:latest
+    build:
+      context: ./Projetos/api-security
+    container_name: app-auth
+    ports:
+      - "8081:8081"
+    
+  app-coleta-lixo:
+    image: api-coleta-lixo
+    build:
+      context: ./Projetos-Mock/api-coleta-lixo
+    container_name: app-coleta-lixo
+    depends_on:
+      - db-coleta-lixo
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db-coleta-lixo:5432/bd-coleta-lixo
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgres
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=none
+    ports:
+      - "4060:4060"
+
+  portal-cidadao:
+    stdin_open: true
+    tty: true
+    hostname: localhost
+    build:
+      context: ./Front-End/portal-cidadao
+    container_name: portal-cidadao
+    ports:
+      - 80:80

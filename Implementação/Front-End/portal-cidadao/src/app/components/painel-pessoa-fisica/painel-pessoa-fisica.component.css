@@ -1,0 +1,19 @@
+.painel-pessoa-fisica-card-principal {
+  min-height: 200px;
+  margin-top: 40px;
+  width: 100%;
+  padding: 10px;
+}
+
+.painel-pessoa-fisica-card-row {
+  padding: 20px 20px 10px 20px;
+}
+
+.painel-pessoa-fisica-card-titulo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.painel-pessoa-fisica-card-descricao {
+  font-size: 1.2rem;
+}

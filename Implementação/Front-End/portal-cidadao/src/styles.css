@@ -1,0 +1,13 @@
+body {
+  background-color: #d9d9dc;
+}
+.geral {
+  min-height: 100%;
+  position: relative;
+}
+.conteudo {
+  padding-bottom: 40px; /* Mesma Altura do Rodapé */
+  padding-top: 20px;
+  min-height: 600px;
+  background-color: #fff;
+}

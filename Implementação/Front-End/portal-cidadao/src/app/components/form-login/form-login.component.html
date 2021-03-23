@@ -1,0 +1,27 @@
+<div class="row form-login-row">
+  <div class="col-sm-12 col-md-6 col-lg-6 form-login-estrutura">
+    <div class="card form-login-card">
+      <div *ngIf="error" class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{ error }}
+        <button type="button" (click)="error = ''" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form>
+        <div class="form-group">
+          <label for="login">Login</label>
+          <input [(ngModel)]="usuario.username" type="email" class="form-control" name="login" aria-describedby="emailHelp" placeholder="Digite seu email de login">
+          <small id="emailHelp" class="form-text text-muted">email@email.com.br</small>
+        </div>
+        <div class="form-group">
+          <label for="senha">Senha</label>
+          <input [(ngModel)]="usuario.password" type="password" name="senha" class="form-control" placeholder="Digite sua senha" (keyup.enter)="login()">
+        </div>
+        <div>
+          <button type="button" class="btn btn-primary form-login-botao-entrar" (click)="login()">Entrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+

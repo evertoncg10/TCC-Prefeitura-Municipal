@@ -1,0 +1,21 @@
+.form-login-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+}
+
+.form-login-estrutura {
+  height: 350px;
+}
+
+.form-login-botao-entrar {
+  margin-top: 20px;
+  width: 100px;
+  font-weight: 500;
+}
+
+.form-login-card {
+  padding: 50px;
+  border: 2px #d9d9dc solid;
+}
