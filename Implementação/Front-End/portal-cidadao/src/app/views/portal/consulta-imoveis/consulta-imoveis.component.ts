@@ -33,6 +33,10 @@ export class ConsultaImoveisComponent implements OnInit {
         this.pessoa = data;
         this.isPessoaFisica = data.cpf;
         this.titulo = this.isPessoaFisica ? 'Dados do Cidadão' : 'Dados da Empresa';
+        this.pessoa.imoveis.forEach(imovel => {
+          const aliquotaFmt = `${imovel.aliquota.toString().replace('.',',')}%`;
+          imovel.aliquotaFmt = aliquotaFmt;
+        })
       })
     });
   }

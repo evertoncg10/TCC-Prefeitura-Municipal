@@ -10,4 +10,5 @@ export class Imovel {
 	public tipoImposto: string;
 	public inscricaoMunicipal: string;
 	public valorImposto: number;
+	public aliquotaFmt: string;
 }
