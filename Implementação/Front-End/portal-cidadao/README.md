@@ -1,27 +1,16 @@
-# PortalCidadao
+# SGM - Frontend para o Portal do Cidadao
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.7.
+Este projeto desenvolvido em Angular tem como objetivo apresentar uma solução para o portal do cidadão da Prefeitura Municipal de Bom Destino.
 
-## Development server
+Trabalho realizado para a conclusão do curso de pós graduação em Arquitetura de Software Distribuído.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Passos para execução
 
-## Code scaffolding
+1. Acesse o [Portal do Município de Bom Destino](http://34.69.154.232/home)
+2. Acesse o menu "Área do Cidadão"
+3. Informe os usuário: jose_re@hotmail.com
+4. Informe a senha: teste123
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Autores
+- Everton Cezar Gonçalves [![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/evertoncezargoncalves/)
+- Jeferson Job Ribeiro dos Santos [![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jeferson-job-923027117/)
