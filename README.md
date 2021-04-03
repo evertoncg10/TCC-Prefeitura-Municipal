@@ -1,7 +1,9 @@
-# Trabalho de Conclusão do Curso - SGM - Frontend para o Portal do Cidadao
+# SGM - Frontend para o Portal do Cidadao
 
+### Introdução
 Este projeto é uma proposta arquitetural, desenvolvido em Angular e Java, que tem como objetivo apresentar uma solução para o portal do cidadão de uma prefeitura.
 
+### Objetivo
 Este trabalho foi realizado para a conclusão do curso de pós graduação em Arquitetura de Software Distribuído.
 
 ### Passos para execução
