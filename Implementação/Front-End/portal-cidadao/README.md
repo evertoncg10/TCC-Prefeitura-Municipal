@@ -12,7 +12,7 @@ Trabalho realizado para a conclusão do curso de pós graduação em Arquitetura
 4. Informe a senha: teste123
 
 ### Autores
-- Everton Cezar Gonçalves 
+- Everton Cezar Gonçalves <br/>
   [![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/evertoncezargoncalves/)
-- Jeferson Job Ribeiro dos Santos 
+- Jeferson Job Ribeiro dos Santos <br/> 
   [![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jeferson-job-923027117/)
