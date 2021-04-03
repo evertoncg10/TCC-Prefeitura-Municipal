@@ -22,5 +22,5 @@ Este trabalho foi realizado para a conclusão do curso de pós graduação em Ar
 - API fictícia para coleta de lixo (RecicleBD - Saneamento e Limpeza): <http://34.69.154.232:4060/swagger-ui.html>
 
 ### Autores
-- Everton Cezar Gonçalves [![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/evertoncezargoncalves/)
-- Jeferson Job Ribeiro dos Santos [![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jeferson-job-923027117/)
+- Everton Cezar Gonçalves <br> [![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/evertoncezargoncalves/)
+- Jeferson Job Ribeiro dos Santos <br> [![Linkedin Badge](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/jeferson-job-923027117/)
